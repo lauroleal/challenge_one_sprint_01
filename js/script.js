@@ -75,9 +75,9 @@ function textoDescriptado(texto) {
         tela.value = texto;
     } else {
         getById("txtsaida").innerHTML = '<textarea id="saida" rows="15" cols="40"></textarea>';
-        getById('imgsaida').remove();
-        getById('h3saida').remove();
-        getById('psaida').remove();
+        //getById('imgsaida').remove();
+        //getById('h3saida').remove();
+        //getById('psaida').remove();
         var tela = getById("saida");
         tela.value = texto;
         getById("botao").innerHTML = '<button id="btcopia" onclick="copiarTexto()">Copiar texto</button>';
