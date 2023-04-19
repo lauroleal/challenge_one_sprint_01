@@ -2,18 +2,22 @@ function getById(id) {
     return document.getElementById(id);
 }
 
+//  Deve funcionar apenas com letras minúsculas
 function textoMaiusculo(texto) {
     return /[A-Z]/.test(texto);
 }
 
+//Não devem ser utilizado letras com acentos
 function TextoSemAcento(texto) {
     return /[áÁãÃâÂàÀéÉêÊíÍóÓõÕôÔöÖúÚÜüçÇî]/.test(texto);
 }
 
+// Não devem ser utilizado caracteres especiais
 function CaracteresEspeciais(texto) {
     return /[^a-zA-Z0-9 ]/.test(texto);
 }
 
+// Deve ser possível converter uma palavra para a versão criptografada
 function criptografarTexto(texto) {
     var textoCriptografado = [];
     var novoTexto;
@@ -37,6 +41,7 @@ function criptografarTexto(texto) {
     return novoTexto;
 }
 
+// capturar texto digitado pelo usuario
 function pegarTexto() {
     getById("msgerro").innerHTML = "";
     var texto = getById('entrada');
@@ -55,46 +60,49 @@ function pegarTexto() {
     }
 }
 
+// função / atalho copiar texto criptografado
 function copiarTexto() {
     let textoCopiado = getById("saida");
     textoCopiado.select();
-    // textoCopiado.setSelectionRange(0, 99999)
     document.execCommand("copy");
     getById("msgsucesso").innerHTML = 'Seu texto foi copiado com #sucesso';
 }
 
+//Retornar uma palavra criptografada para a versão original.
 function descripito() {
     var texto = getById("entrada").value;
-    //var texto = novoTexto.replace(' ', '.')
     var desCriptografar = [];
-    var desTexto = [];
+    var textoDesCriptografado = [];
 
     for (var cont = 0; cont < texto.length; cont++) {
-
         if (texto[cont] === "a" && texto[cont + 1] === "i") {
             desCriptografar[cont] = "a";
-            console.log(texto + " a ");
+            cont++;
         } else if (texto[cont] === "e" && texto[cont + 1] === "n" && texto[cont + 2] === "t" && texto[cont + 3] === "e" && texto[cont + 4] === "r") {
             desCriptografar[cont] = "e";
-            console.log(texto + " e");
+            cont = cont + 4;
         } else if (texto[cont] === "i" && texto[cont + 1] === "m" && texto[cont + 2] === "e" && texto[cont + 3] === "s") {
             desCriptografar[cont] = "i";
-            console.log(texto + " i");
+            cont = cont + 3;
         } else if (texto[cont] === "o" && texto[cont + 1] === "b" && texto[cont + 2] === "e" && texto[cont + 3] === "r") {
             desCriptografar[cont] = "o";
-            console.log(texto + " o");
+            cont = cont + 3;
         } else if (texto[cont] === "u" && texto[cont + 1] === "f" && texto[cont + 2] === "a" && texto[cont + 3] === "t") {
             desCriptografar[cont] = "u";
-            console.log(texto + " u");
+            cont = cont + 3;
         } else if (texto[cont] === " ") {
             desCriptografar[cont] = " ";
         } else {
             desCriptografar[cont] = texto[cont];
         }
     }
-    desTexto = desCriptografar.join("");
-    console.log(desTexto + 'destexo');
-    console.log(desCriptografar);
-    return desTexto;
-    //return desTexto;
+    textoDesCriptografado = desCriptografar.join("");
+    textoDescriptado(textoDesCriptografado);
+
+}
+
+function textoDescriptado(texto) {
+    var tela = getById('#entrada');
+    tela = ' ';
+    tela = texto;
 }
