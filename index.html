@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Desafio Challenge ONE</title>
+
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style_principal.css">
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <section class="cabecalho">
+            <h1><img src="./assets/logo_branco.png"></h1>
+        </section>
+    </header>
+    <main>
+        <div>
+            <section class="entrada">
+                <span id="msgerro"></span>
+                <textarea rows="15" cols="40" id="entrada" name="entrada" placeholder="digite seu texto aqui"></textarea>
+                <p class="p_texto">&#128712; Apenas letras minúsculas e sem acento.</p>
+                <button class="bt1" onclick="pegarTexto()">Criptografar</button>
+                <button onclick="descripito()">Descriptografar</button>
+            </section>
+        </div>
+        <div class="back-saida">
+            <section class="saida">
+                <img id="imgsaida" src="./assets/img_tx.png">
+                <h3 id="h3saida">Nehuma mensagem encontrada</h3>
+                <p id="psaida">Digite um texto que você deseja criptografar ou descriptografar</p>
+                <span id="txtsaida"></span>
+                <span id="msgsucesso"></span>
+                <span id="botao"></span>
+            </section>
+        </div>
+    </main>
+</body>
+
+<footer>
+    <section class="logo_footer">
+        <img src="./assets/lauro_logo_footer.png">
+    </section>
+
+    <section class="icones_sociais">
+        <a href="https://www.facebook.com/lauroeleal/" target="_blank"><img src="./assets/facebook_logo.png"></a>
+        <a href="https://www.instagram.com/lauroeleal/" target="_blank"><img src="./assets/instagram_logo.png"></a>
+        <a href="https://twitter.com/lauroeleal" target="_blank"><img src="./assets/twitter_logo.png"></a>
+        <a href="https://www.linkedin.com/in/lauroleal" target="_blank"><img src="./assets/linkedin_logo.png"></a>
+        <a href="https://github.com/lauroleal" target="_blank"><img src="./assets/GitHub_logo.png"></a>
+        <a href="https://api.whatsapp.com/send?phone=5511963840978" target="_blank"><img src="./assets/Whatsapp_logo.png"></a>
+    </section>
+
+    <p>Projeto <span>#challengeonedecodificador5</span> | Desenvolvido por Lauro Leal👻</p>
+</footer>
+
+</html>
