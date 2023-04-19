@@ -67,17 +67,22 @@ function copiarTexto() {
     document.execCommand("copy");
     getById("msgsucesso").innerHTML = 'Seu texto foi copiado com #sucesso';
 }
-
+console.log(document.querySelectorAll(".imgsaida img"));
 // Jogando na tela o texto Descriptografado
 function textoDescriptado(texto) {
     if (document.querySelectorAll("textarea") > 1) {
         var tela = getById("entrada");
         tela.value = texto;
+    } else if (document.querySelectorAll(".imgsaida img") == true) { // <----
+        getById('imgsaida').remove();
+        getById('h3saida').remove();
+        getById('psaida').remove();
+        getById("txtsaida").innerHTML = '<textarea id="saida" rows="15" cols="40"></textarea>';
+        var tela = getById("saida");
+        tela.value = texto;
+        getById("botao").innerHTML = '<button id="btcopia" onclick="copiarTexto()">Copiar texto</button>';
     } else {
         getById("txtsaida").innerHTML = '<textarea id="saida" rows="15" cols="40"></textarea>';
-        //getById('imgsaida').remove();
-        //getById('h3saida').remove();
-        //getById('psaida').remove();
         var tela = getById("saida");
         tela.value = texto;
         getById("botao").innerHTML = '<button id="btcopia" onclick="copiarTexto()">Copiar texto</button>';
