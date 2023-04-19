@@ -68,6 +68,24 @@ function copiarTexto() {
     getById("msgsucesso").innerHTML = 'Seu texto foi copiado com #sucesso';
 }
 
+// Jogando na tela o texto Descriptografado
+function textoDescriptado(texto) {
+    if (document.querySelectorAll("textarea") > 1) {
+        var tela = getById("entrada");
+        tela.value = texto;
+    } else {
+        getById("txtsaida").innerHTML = '<textarea id="saida" rows="15" cols="40"></textarea>';
+        getById('imgsaida').remove();
+        getById('h3saida').remove();
+        getById('psaida').remove();
+        var tela = getById("saida");
+        tela.value = texto;
+        getById("botao").innerHTML = '<button id="btcopia" onclick="copiarTexto()">Copiar texto</button>';
+    }
+
+
+}
+
 //Retornar uma palavra criptografada para a versão original.
 function descripito() {
     var texto = getById("entrada").value;
@@ -99,10 +117,4 @@ function descripito() {
     textoDesCriptografado = desCriptografar.join("");
     textoDescriptado(textoDesCriptografado);
 
-}
-
-function textoDescriptado(texto) {
-    var tela = getById('#entrada');
-    tela = ' ';
-    tela = texto;
 }
