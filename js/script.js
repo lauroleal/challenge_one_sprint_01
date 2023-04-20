@@ -69,8 +69,8 @@ function copiarTexto() {
 }
 // Jogando na tela o texto Descriptografado
 function textoDescriptado(texto) {
-
-    if (document.querySelectorAll("textarea").length >= 1) {
+    getById("msgsucesso").innerHTML = ' ';
+    if (document.querySelectorAll("textarea").length == 1) {
         getById('imgsaida').remove();
         getById('h3saida').remove();
         getById('psaida').remove();
@@ -78,19 +78,10 @@ function textoDescriptado(texto) {
         getById("botao").innerHTML = '<button id="btcopia" onclick="copiarTexto()">Copiar texto</button>';
         var tela = getById("saida");
         tela.value = texto;
-    } else if (document.querySelectorAll(".imgsaida img") == true) { // <----
-        getById('imgsaida').remove();
-        getById('h3saida').remove();
-        getById('psaida').remove();
-        getById("txtsaida").innerHTML = '<textarea id="saida" rows="15" cols="40"></textarea>';
+    } else if (document.querySelectorAll("textarea").length >= 2) {
+        getById("msgsucesso").innerHTML = ' ';
         var tela = getById("saida");
         tela.value = texto;
-        getById("botao").innerHTML = '<button id="btcopia" onclick="copiarTexto()">Copiar texto</button>';
-    } else {
-        getById("txtsaida").innerHTML = '<textarea id="saida" rows="15" cols="40"></textarea>';
-        var tela = getById("saida");
-        tela.value = texto;
-        getById("botao").innerHTML = '<button id="btcopia" onclick="copiarTexto()">Copiar texto</button>';
     }
 
 
