@@ -46,7 +46,7 @@ function pegarTexto() {
     getById("msgerro").innerHTML = "";
     var texto = getById('entrada');
     if (texto.value == '') {
-        getById("msgerro").innerHTML = "Tente digitar alguma coisa primeiro";
+        getById("msgerro").innerHTML = "</br>Tente digitar alguma coisa primeiro";
     } else if (textoMaiusculo(texto.value) || TextoSemAcento(texto.value) || CaracteresEspeciais(texto.value)) {
         getById("msgerro").innerHTML = '</br>Apenas letras minúsculas, sem acento e sem caracteres especiais</br>Deseja converter o seu texto?<p class="btajuda" onclick="converterTexto()">Converter</p>';
     } else {
