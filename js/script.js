@@ -122,7 +122,7 @@ function descripito() {
 
 function converterTexto() {
     var texto = getById('entrada').value;
-    var textoconvertido = texto.normalize("NFD").replace(/[^a-zA-Z0-9-' ']/g, "").toLowerCase();
+    var textoconvertido = texto.normalize("NFD").replace(/[^a-zA-Z0-9 ]/g, "").toLowerCase();
 
     getById('entrada').value = textoconvertido;
 }
