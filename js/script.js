@@ -46,9 +46,9 @@ function pegarTexto() {
     getById("msgerro").innerHTML = "";
     var texto = getById('entrada');
     if (texto.value == '') {
-        getById("msgerro").innerHTML = "&#9888; Tente digitar alguma coisa primeiro";
+        getById("msgerro").innerHTML = "Tente digitar alguma coisa primeiro";
     } else if (textoMaiusculo(texto.value) || TextoSemAcento(texto.value) || CaracteresEspeciais(texto.value)) {
-        getById("msgerro").innerHTML = "&#9888; Apenas letras minúsculas, sem acento e sem caracteres especiais";
+        getById("msgerro").innerHTML = '</br>Apenas letras minúsculas, sem acento e sem caracteres especiais</br>Deseja converter o seu texto?<p class="btajuda" onclick="converterTexto()">Converter</p>';
     } else {
         var textoCriptografado = criptografarTexto(texto.value);
         getById("txtsaida").innerHTML = '<textarea id="saida" rows="15" cols="40"></textarea>';
@@ -65,7 +65,7 @@ function copiarTexto() {
     let textoCopiado = getById("saida");
     textoCopiado.select();
     document.execCommand("copy");
-    getById("msgsucesso").innerHTML = 'Seu texto foi copiado com #sucesso';
+    getById("msgsucesso").innerHTML = 'Seu texto foi copiado com sucesso';
 }
 // Jogando na tela o texto Descriptografado
 function textoDescriptado(texto) {
@@ -118,4 +118,11 @@ function descripito() {
     textoDesCriptografado = desCriptografar.join("");
     textoDescriptado(textoDesCriptografado);
 
+}
+
+function converterTexto() {
+    var texto = getById('entrada').value;
+    var textoconvertido = texto.normalize("NFD").replace(/[^a-zA-Z0-9-' ']/g, "").toLowerCase();
+
+    getById('entrada').value = textoconvertido;
 }

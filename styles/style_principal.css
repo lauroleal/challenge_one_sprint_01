@@ -22,7 +22,6 @@ header {
 main {
     justify-content: center;
     display: flex;
-    padding: 20px;
 }
 
 textarea {
@@ -65,18 +64,19 @@ textarea:focus {
     justify-content: center;
     width: 45%;
     right: auto;
+    margin-top: 45%;
 }
 
 #msgerro {
-    font-size: 1.2em;
-    color: #cc0b0bd8;
+    font-size: 1.1em;
+    color: #030303e7;
     font-family: sans-serif;
 }
 
 #msgsucesso {
     display: block;
     font-size: 1.2em;
-    color: #157e07d8;
+    color: #030303e7;
     font-family: sans-serif;
     margin-bottom: -9px;
 }
@@ -85,6 +85,26 @@ textarea:focus {
     font-size: 1em;
     color: #0a3871d0;
     font-family: sans-serif;
+    padding: 10px;
+}
+
+.btajuda {
+    margin: 0 auto;
+    margin-top: 5%;
+    color: #0A3871;
+    font-family: 'Questrial', sans-serif;
+    font-size: 15px;
+    padding: 10px;
+    width: 100px;
+    border: 1px solid #0A3871;
+    ;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btajuda:hover {
+    background-color: #0A3871;
+    color: #F3F5FC;
 }
 
 button {
@@ -139,6 +159,7 @@ h3 {
 }
 
 footer {
+    width: 100%;
     background-color: #0e2847f5;
     padding: 15px 0 15px 0;
     border-top-left-radius: 25%;
@@ -169,12 +190,19 @@ footer span {
     }
     textarea {
         margin-top: 20px;
+        margin-left: none;
+    }
+    .saida img {
+        margin-top: 20%;
     }
     .primeiro_quadro,
     .saida {
         text-align: center;
         margin-left: 1em;
         display: block;
+    }
+    .saida p {
+        margin-bottom: 10px;
     }
 }
 
